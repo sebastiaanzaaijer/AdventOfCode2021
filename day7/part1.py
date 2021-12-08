@@ -8,7 +8,7 @@ def solve_puzzle(puzzle_input):
     min_fuel = 9999999999999999
 
     for i in range(pmin,pmax):
-        fuel = sum(abs((pos-i)**2+abs(pos-i))//2*crabs[pos] for pos in crabs)
+        fuel = sum(abs(pos-i)*crabs[pos] for pos in crabs)
         min_fuel = min(fuel,min_fuel)
 
     return min_fuel
